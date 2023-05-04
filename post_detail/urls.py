@@ -1,5 +1,9 @@
 from django.urls import path
 from . import views
+from django.views import View
+from django.http import (HttpResponse,
+                         HttpResponseRedirect)
+
 
 urlpatterns = [
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
