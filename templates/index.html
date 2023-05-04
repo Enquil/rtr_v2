@@ -2,5 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h1>Im a test</h1>
+<div class="container-fluid">
+    <div class="row g-0">
+        <div class="col-10 offset-1 text-center">
+            {% for post in post_list %}
+                <a href="#" class="post-detail-link d-block my-5">
+                    <div class="card">
+                        {% if "placeholder" not in post.featured_image.url %}
+                            <img class="m-2 mx-auto d-block" style="max-width: 300px; height: auto;" src="{{ post.featured_image.url }}">
+                        {% endif %}
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <h4>By: {{ post.author | safe }}<span class="post-date"> | {{ post.created_on }}</span></h4>
+                        <h6>LIKES AND COMMENTS</h6>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
