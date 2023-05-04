@@ -49,10 +49,11 @@ INSTALLED_APPS = [
     'newssite',
 ]
 
-SITE_ID = 1  # Lets django handle multiple sites from one database
+# Allauth Settings and Login/Logout Handling
+SITE_ID = 1  # let's django handle multiple sites from single database
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-LOGIN_REDIRECT_URL = '/'  # Redirects to home page after login
-LOGOUT_REDIRECT_URL = '/'  # Same as for login redirect above
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
