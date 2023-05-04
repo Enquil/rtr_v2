@@ -23,6 +23,7 @@ class PostAdmin(SummernoteModelAdmin):
     def disable_post(self, request, queryset):
         queryset.update(status=2)
 
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
 
