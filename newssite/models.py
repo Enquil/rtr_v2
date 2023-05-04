@@ -20,20 +20,18 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 
 class Post(models.Model):
     '''
-    - Basic post class mostly taken from CodeInstitute django tutorial
-     with some modifications.
+    - Basic post class sourced from CodeInstitute django tutorial
+     with some minor modifications:
+        - extended slug
+        - status is 1: "Published" as default
     '''
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='posts'
-        )
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
     updated_on_date = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    category = models.CharField(
-        max_length=30, choices=CATEGORY_CHOICES, default='general'
-        )
+    category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='general')
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -58,3 +56,40 @@ class Post(models.Model):
                     self.author) + str(
                         random.randint(0, 9999999)))
         return super().save(*args, **kwargs)
+
+
+class Comment(models.Model):
+    '''
+    - Basic comment class sourced from CodeInstitute django tutorial
+     with some minor modifications:
+        - Parents and children to be able to use comments as a conversation
+        - Approved is set to True by default
+    '''
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=True)
+    parent = models.ForeignKey('self',
+                               null=True,
+                               blank=True,
+                               on_delete=models.CASCADE,
+                               related_name='replies')
+
+    class Meta:
+        ordering = ["created_on"]
+
+    @property
+    def children(self):
+        return Comment.objects.filter(parent=self).reverse()
+
+    @property
+    def is_parent(self):
+        if self.parent is None:
+            return True
+        return False
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
