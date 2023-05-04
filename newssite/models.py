@@ -22,16 +22,20 @@ class Post(models.Model):
     '''
     - Basic post class sourced from CodeInstitute django tutorial
      with some minor modifications:
-        - extended slug
-        - status is 1: "Published" as default
+        - extended slug to allow title to match other posts
+        - "status" is 1: "Published", as default
     '''
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    author = models.ForeignKey(User,
+                               on_delete=models.CASCADE,
+                               related_name='posts')
     updated_on_date = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='general')
+    category = models.CharField(max_length=30,
+                                choices=CATEGORY_CHOICES,
+                                default='general')
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -62,8 +66,8 @@ class Comment(models.Model):
     '''
     - Basic comment class sourced from CodeInstitute django tutorial
      with some minor modifications:
-        - Parents and children to be able to use comments as a conversation
-        - Approved is set to True by default
+        - Parents and children to be able to use comments as a "conversation"
+        - "Approved" field is set to True by default
     '''
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
