@@ -49,12 +49,6 @@ INSTALLED_APPS = [
     'newssite',
 ]
 
-# Allauth Settings and Login/Logout Handling
-SITE_ID = 1  # let's django handle multiple sites from single database
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -82,6 +76,22 @@ TEMPLATES = [
         },
     },
 ]
+
+# From allauth doc.
+AUTHENTICATION_BACKENDS = [
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Allauth Settings and Login/Logout Handling
+SITE_ID = 1  # let's django handle multiple sites from single database
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'rtr_v2.wsgi.application'
 
