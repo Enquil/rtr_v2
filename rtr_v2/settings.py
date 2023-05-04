@@ -39,11 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'newssite',
 ]
+
+SITE_ID = 1  # Lets django handle multiple sites from one database
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGIN_REDIRECT_URL = '/'  # Redirects to home page after login
+LOGOUT_REDIRECT_URL = '/'  # Same as for login redirect above
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
