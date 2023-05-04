@@ -18,7 +18,10 @@ class PostAdmin(SummernoteModelAdmin):
         )
     search_fields = ('title', 'content')
     summernote_fields = ('content')
+    actions = ['disable_post']
 
+    def disable_post(self, request, queryset):
+        queryset.update(status=2)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):

@@ -15,7 +15,7 @@ CATEGORY_CHOICES = [
     ("ships_giggles", "ships and giggles"),
     ]
 
-STATUS = ((0, 'Draft'), (1, 'Published'))
+STATUS = ((0, 'Draft'), (1, 'Published'), (2, 'Disabled'))
 
 
 class Post(models.Model):
