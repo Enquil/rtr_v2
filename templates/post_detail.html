@@ -9,7 +9,17 @@
         </div>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row col">
+        {% if comments %}
+            {% for comment in comments  %}
+            <p>{{ comment.body }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
 <form method="post" action="" class="comment-form">
+    {% csrf_token %}
     {{ comment_form }}
     <button type="submit" class="btn">Submit</button>
 </form>
