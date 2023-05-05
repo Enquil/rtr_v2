@@ -1,13 +1,8 @@
-from django.shortcuts import render
 from newssite.models import Post, Comment
 from django.views import View
 from .forms import CommentForm
-
-from django.shortcuts import (
-                              render,
-                              get_object_or_404,
-                              redirect, reverse
-                             )
+from django.shortcuts import (render, get_object_or_404,
+                              redirect, reverse)
 from django.http import (HttpResponse,
                          HttpResponseRedirect)
 
