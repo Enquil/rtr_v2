@@ -18,7 +18,7 @@ class Testviews(TestCase):
                     author=user,
                     content="imbob",
                     category="bobcat",
-                    slug='bobisaslug')
+                    slug='bobisaslug',)
         response = self.client.get(render(requests, template_name='post_detail.html'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'post_detail.html')
