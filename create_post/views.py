@@ -1,5 +1,10 @@
+from django.views import View
 from django.shortcuts import render
 from newssite.models import Post
+from django.shortcuts import (render, get_object_or_404,
+                              redirect, reverse)
+from django.http import (HttpResponse,
+                         HttpResponseRedirect)
 
 
 class CreatePost(View):
