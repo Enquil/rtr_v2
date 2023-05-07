@@ -1,14 +1,15 @@
 from django.test import TestCase
+from . models import Post, Comment
+from django.contrib.auth.models import User
 
 
-# class Testviews(TestCase):
+class TestPostList(TestCase):
 
-#     def test_get_post_detail(self):
+    def test_get_post_list(self):
 
-#         user = User(username='bob', is_superuser=True, password='bobspassword')
-#         post = Post(title='bobs post',
-#                     author=user,
-#                     slug='test-post')
-#         response = self.client.get('/test-post')
-#         self.assertEqual(response.status_code, 200)
-#         self.assertTemplateUsed(response, 'post_detail.html')
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'index.html', 'base.html')
+
+    # def test_post_list_queryset(self):
+    #     self.assert

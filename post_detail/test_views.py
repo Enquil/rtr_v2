@@ -8,19 +8,18 @@ from django.http import (HttpResponse,
 import requests
 
 
-class Testviews(TestCase):
+class TestPostDetail(TestCase):
 
     def test_get_post_detail(self):
-        user = User(username='bob',
-                    is_superuser=True,
-                    password='bobspassword')
-        test = Post(title='bobspost',
-                    author=user,
-                    content="imbob",
-                    category="bobcat",
-                    slug='bobisaslug',)
-        response = self.client.get(render(
-                                   requests,
-                                   template_name='post_detail.html'))
+        user = User.objects.create(username='bob',
+                                   is_superuser=True,
+                                   password='bobspassword')
+        post = Post.objects.create(title='bobspost',
+                                   author=user,
+                                   content="hi, im bob",
+                                   category="general",
+                                   slug='bob-is-a-slug')
+        post.likes.set(('1'))
+        response = self.client.get(reverse('post_detail', args=(post.slug,)))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'post_detail.html')
