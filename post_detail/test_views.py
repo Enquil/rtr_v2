@@ -1,5 +1,5 @@
 from django.test import TestCase
-from newssite.models import Post
+from newssite.models import Post, Comment
 from django.contrib.auth.models import User
 from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse)
@@ -14,11 +14,11 @@ class TestPostDetail(TestCase):
         user = User.objects.create(username='bob',
                                    is_superuser=True,
                                    password='bobspassword')
-        post = Post.objects.create(title='bobspost',
+        post = Post.objects.create(title='bobs post',
                                    author=user,
                                    content="hi, im bob",
                                    category="general",
-                                   slug='bob-is-a-slug')
+                                   slug='bobs-post')
         post.likes.set(('1'))
         response = self.client.get(reverse('post_detail', args=(post.slug,)))
         self.assertEqual(response.status_code, 200)
