@@ -54,7 +54,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'index' %}">RTR</a>
+                <a class="navbar-brand" href="{% url 'index' %}"><span>R</span><h2 class="d-inline">T</h2><span>R</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -63,8 +63,9 @@
                         <!-- Categories section with dropdown menu -->
                       <div class="dropdown category-menu">
                             
-                            <li class="text-dark btn dropdown-toggle nav-color fs-3" 
-                                type="button" id="category-dropdown" 
+                            <li class="text-dark btn dropdown-toggle nav-color fs-3"
+                                type="button" 
+                                id="category-dropdown"
                                 data-bs-toggle="dropdown" 
                                 aria-expanded="false">
                                 Categories
@@ -77,7 +78,7 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-3" 
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Business 
                                     </a>
                                 </li>
@@ -85,14 +86,14 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-3" 
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Art/Entertainment 
                                     </a>
                                 </li>
 
                                 <li class="nav-item dropdown-categories">
                                     <a class="text-dark nav-link fs-3" 
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Finance/Economics 
                                     </a>
                                 </li>
@@ -100,7 +101,7 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-3" 
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Politics                                      
                                     </a>    
                                 </li>
@@ -108,7 +109,7 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-3"
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Sciences 
                                     </a>
                                 </li>
@@ -116,7 +117,7 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-3" 
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Opinions 
                                     </a>
                                 </li>
@@ -124,7 +125,7 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-3" 
-                                       href=""> 
+                                       href="{% url 'index' %}"> 
                                         Ships and Giggles 
                                     </a>
                                 </li>
@@ -137,6 +138,9 @@
                             <a class="nav-link text-dark fs-3" aria-current="page" href="{% url 'index' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fs-3" href="">My Account</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark fs-3" href="{% url 'account_logout' %}">Logout</a>
                         </li>
