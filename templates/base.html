@@ -60,20 +60,92 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
+                        <!-- Categories section with dropdown menu -->
+                      <div class="dropdown category-menu">
+                            
+                            <li class="text-dark btn dropdown-toggle nav-color fs-3" 
+                                type="button" id="category-dropdown" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false">
+                                Categories
+                            </li>
+
+                            <!-- Post Categories ul -->
+                            <ul class="dropdown-menu rounded-0 border-top-0 text-center m-0" 
+                                aria-labelledby="category-dropdown">
+
+                                <li class="nav-item dropdown-categories">
+
+                                    <a class="text-dark nav-link fs-3" 
+                                       href=""> 
+                                        Business 
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown-categories">
+
+                                    <a class="text-dark nav-link fs-3" 
+                                       href=""> 
+                                        Art/Entertainment 
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown-categories">
+                                    <a class="text-dark nav-link fs-3" 
+                                       href=""> 
+                                        Finance/Economics 
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown-categories">
+
+                                    <a class="text-dark nav-link fs-3" 
+                                       href=""> 
+                                        Politics                                      
+                                    </a>    
+                                </li>
+
+                                <li class="nav-item dropdown-categories">
+
+                                    <a class="text-dark nav-link fs-3"
+                                       href=""> 
+                                        Sciences 
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown-categories">
+
+                                    <a class="text-dark nav-link fs-3" 
+                                       href=""> 
+                                        Opinions 
+                                    </a>
+                                </li>
+
+                                <li class="nav-item dropdown-categories">
+
+                                    <a class="text-dark nav-link fs-3" 
+                                       href=""> 
+                                        Ships and Giggles 
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- /// Categories section with dropdown menu /// -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                            <a class="nav-link text-dark fs-3" aria-current="page" href="{% url 'index' %}">Home</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link text-dark fs-3" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link fs-3" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link fs-3" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
                     </ul>
