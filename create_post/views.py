@@ -13,9 +13,9 @@ class CreatePost(View):
 
         return render(
             request,
-            "create_post.html",
+            "create_post/create_post.html",
             {
-                "post_form": PostForm()
+                # "post_form": PostForm()
             },
         )
 
