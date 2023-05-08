@@ -159,6 +159,17 @@
                 </div>
             </div>
         </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    {% if messages %}
+                            {% for message in messages %}
+                            <h3 class="py-2 {% if message.tags %} {{ message.tags }}"{% endif %}>{{ message }}</h3>
+                            {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
         {% block content %}
         {% endblock content %}
 

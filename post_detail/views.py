@@ -5,6 +5,7 @@ from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse)
 from django.http import (HttpResponse,
                          HttpResponseRedirect)
+from django.contrib import messages
 
 
 class PostDetail(View):
@@ -73,6 +74,7 @@ class PostDetail(View):
             comment.post = post
             # save
             comment.save()
+            messages.success(request, f'Your comment was succesfully posted')
             return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
         else:
