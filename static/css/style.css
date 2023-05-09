@@ -2,6 +2,22 @@ html {
     height: 100%;
 }
 
+
+    /* ----- FORM STYLING ----- */
+
+.signup-col {
+    background-color: #372549;
+}
+
+.signup-or-login > h1, p {
+    color: white;
+}
+
+#signup_form > p {
+    font-size: 20px;
+    color: white;
+}
+
 #signup_form > p > label {
     display: block;
 }
