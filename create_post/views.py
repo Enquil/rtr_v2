@@ -1,6 +1,7 @@
 from django.views import View
 from django.shortcuts import render
 from newssite.models import Post
+from django.contrib.auth.models import User
 from .forms import PostForm
 from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse)
