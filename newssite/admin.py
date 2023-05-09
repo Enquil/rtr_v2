@@ -38,7 +38,7 @@ class CommentAdmin(admin.ModelAdmin):
                     )
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
-    actions = ['disable_comment']
+    actions = ['disable_comments']
 
     def disable_comments(self, request, queryset):
         queryset.update(approved=False)
