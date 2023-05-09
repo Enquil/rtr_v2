@@ -22,4 +22,4 @@ class TestPostDetail(TestCase):
         post.likes.set(('1'))
         response = self.client.get(reverse('post_detail', args=(post.slug,)))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'post_detail.html')
+        self.assertTemplateUsed(response, 'post_detail/post_detail.html')
