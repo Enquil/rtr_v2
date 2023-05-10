@@ -4,18 +4,26 @@ from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
 import random
 
-CATEGORY_CHOICES = [
-    ('general', "general"),
-    ("business", "business"),
-    ("art_entertainment", "art and entertainment"),
-    ("finance_economics", "finance and economics"),
-    ("politics", "politics"),
-    ("science", "science"),
-    ("opinions", "opinions"),
-    ("ships_giggles", "ships and giggles"),
-    ]
 
 STATUS = ((0, 'Draft'), (1, 'Published'), (2, 'Disabled'))
+
+
+# Sourced from Code Institute
+class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254,
+                                     null=True,
+                                     blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
 
 
 class Post(models.Model):
@@ -33,9 +41,11 @@ class Post(models.Model):
                                related_name='posts')
     updated_on_date = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    category = models.CharField(max_length=30,
-                                choices=CATEGORY_CHOICES,
-                                default='general')
+    category = models.ForeignKey(Category,
+                                 max_length=30,
+                                 null=True,
+                                 blank=True,
+                                 on_delete=models.SET_NULL)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(max_length=300,
                                blank=True)
@@ -100,3 +110,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+

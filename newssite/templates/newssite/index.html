@@ -14,7 +14,10 @@
                                  style="max-width: 300px; height: auto;" 
                                  src="{{ post.featured_image.url }}">
                         {% endif %}
-                        <h5>Posted in {{ post.category }} | By: {{ post.author | safe }}<span class="post-date"> | {{ post.created_on }}</span></h5>
+                        {% if post.excerpt %}
+                            <p class="mt-2">{{ post.excerpt }}</p>
+                        {% endif %}
+                        <h5>Posted in {{ post.category | safe }} | By: {{ post.author | safe }}<span class="post-date"> | {{ post.created_on }}</span></h5>
                         <h5>
                             <span><i class="fa-regular fa-comments"></i> {{ post.comments.count }}</span> |
                             <span><i class="fa-regular fa-thumbs-up"></i> {{ post.likes.count }}</span>

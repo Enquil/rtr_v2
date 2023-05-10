@@ -1,0 +1,57 @@
+[{
+    "pk": 1,
+    "model": "newssite.category",
+    "fields": {
+        "name": "general",
+        "friendly_name": "General"
+    }
+}, {
+    "pk": 2,
+    "model": "newssite.category",
+    "fields": {
+        "name": "business",
+        "friendly_name": "Business"
+    }
+}, {
+    "pk": 3,
+    "model": "newssite.category",
+    "fields": {
+        "name": "art_entertainment",
+        "friendly_name": "Art and Entertainment"
+    }
+}, {
+    "pk": 4,
+    "model": "newssite.category",
+    "fields": {
+        "name": "finance_economics",
+        "friendly_name": "Finance and Economics"
+    }
+}, {
+    "pk": 5,
+    "model": "newssite.category",
+    "fields": {
+        "name": "politics",
+        "friendly_name": "Politics"
+    }
+}, {
+    "pk": 6,
+    "model": "newssite.category",
+    "fields": {
+        "name": "science",
+        "friendly_name": "Science"
+    }
+}, {
+    "pk": 7,
+    "model": "newssite.category",
+    "fields": {
+        "name": "opinions",
+        "friendly_name": "Opinions"
+    }
+}, {
+    "pk": 8,
+    "model": "newssite.category",
+    "fields": {
+        "name": "ships_giggles",
+        "friendly_name": "Ships and Giggles"
+    }
+}]
