@@ -15,29 +15,39 @@
         </div>
     </div>
 
-    <form class="like-form" action="{% url 'post_like' post.slug %}" method="POST">
-        {% csrf_token %}
-        {% if liked %}
-        <button type="submit" class="btn-liked"><i class="fas fa-heart fa-3x liked"></i></button>
-        {% else %}
-        <button type="submit" class="btn-like"><i class="far fa-heart fa-3x"></i></button>
-        {% endif %}
-        <span class="likes-count fs-1">{{ post.number_of_likes }}</span>
-    </form>
-</div>
-
-<!-- Comment Section -->
-<div class="container-fluid">
-    <div class="row col">
-        {% if comments %}
-            {% for comment in comments  %}
-            <p>- {{ comment.body }}</p>
-            {% endfor %}
-
-            {% else %}
-            <p>No comments has been posted</p>
-        {% endif %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form class="like-form" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" class="btn-liked"><i class="fas fa-heart fa-3x liked"></i></button>
+                {% else %}
+                <button type="submit" class="btn-like"><i class="far fa-heart fa-3x"></i></button>
+                {% endif %}
+                <span class="likes-count fs-1">{{ post.number_of_likes }}</span>
+            </form>
+        </div>
     </div>
+
+    {% if comments %}
+        {% for comment in comments  %}
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                        <p> {{ comment.body }}</p>
+                    <hr>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <hr>
+                <p>No comments has been posted</p>
+                <hr>
+            </div>
+        </div>
+    {% endif %}
 </div>
 
 <!-- Comment Form -->
