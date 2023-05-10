@@ -6,6 +6,11 @@
     
     <div class="row g-0">
         <div class="col-10 offset-1 text-center">
+            {% if "placeholder" not in post.featured_image.url %}
+                <img class="m-2 mx-auto d-block detail-img" 
+                     style="max-width: 100%; height: auto;" 
+                     src="{{ post.featured_image.url }}">
+            {% endif %}
             {{ post.content | safe }}
         </div>
     </div>
@@ -26,8 +31,9 @@
     <div class="row col">
         {% if comments %}
             {% for comment in comments  %}
-            <p>{{ comment.body }}</p>
+            <p>- {{ comment.body }}</p>
             {% endfor %}
+
             {% else %}
             <p>No comments has been posted</p>
         {% endif %}
