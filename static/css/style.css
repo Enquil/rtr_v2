@@ -1,15 +1,8 @@
-html {
-    height: 100%;
-}
 
     /* ----- NAV / NAV-ITEMS ----- */
+
 nav {
     background-color: #C299BE;
-}
-
-
-.nav-signup-link {
-    border: none;
 }
 
 .signup-btn {

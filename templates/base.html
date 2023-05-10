@@ -51,7 +51,7 @@
 
     </head>
 
-    <body>
+    <body class="h-100 d-flex flex-column">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}"><span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span></a>
@@ -189,8 +189,8 @@
         </div>
         {% block content %}
         {% endblock content %}
-        <footer>
-            <div class="container fluid mb-auto">
+        <footer class="mt-auto w-100">
+            <div class="container-fluid">
                 This is a footer
             </div>
         </footer>
