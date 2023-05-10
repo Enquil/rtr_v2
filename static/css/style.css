@@ -5,10 +5,13 @@
 
     /* ----- Signup-form ----- */
 
+.error > li {
+    color: white;
+}
 
 #signup_form > p {
     font-size: 20px;
-    color: white;
+    color: black;
 }
 
 #signup_form > p > label {
