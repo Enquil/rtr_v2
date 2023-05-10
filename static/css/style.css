@@ -29,3 +29,46 @@ nav {
 #signup_form > p > label {
     display: block;
 }
+
+
+/* ----- COLOR CLASSES ----- */
+
+.bg-lilac {
+    background-color: #C299BE;
+}
+
+.bg-mint {
+    background-color: #C5E7E2;
+}
+
+.bg-feldgrau {
+    background-color: #627264;
+}
+
+.bg-purple {
+    background-color: #372549;
+}
+
+.bg-ecru {
+    background-color: #D7BE82;
+}
+
+.lilac {
+    color: #C299BE;
+}
+
+.mint {
+    color: #C5E7E2;
+}
+
+.feldgrau {
+    color: #627264;
+}
+
+.purple {
+    color: #372549;
+}
+
+.ecru {
+    color: #D7BE82;
+}
