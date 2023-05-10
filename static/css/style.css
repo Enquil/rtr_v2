@@ -2,8 +2,21 @@ html {
     height: 100%;
 }
 
+    /* ----- NAV / NAV-ITEMS ----- */
+nav {
+    background-color: #C299BE;
+}
 
-    /* ----- FORM STYLING ----- */
+
+.nav-signup-link {
+    border: none;
+}
+
+.signup-btn {
+    background-color: #C5E7E2;
+}
+
+    /* ----- FORMS ----- */
 
 .signup-col {
     background-color: #372549;

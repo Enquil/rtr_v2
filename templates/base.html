@@ -52,7 +52,7 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}"><span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -143,7 +143,7 @@
                         <!-- Logic to handle what user sees, depending on if logged in or out -->
                         {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link text-dark fs-4" href="">
+                                <a class="d-inline-block nav-link text-dark fs-4" href="">
                                     <i class="fa-solid fa-user fa-xs"></i> My Account
                                 </a>
                             </li>
@@ -153,18 +153,18 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark fs-4" href="{% url 'account_logout' %}">
+                                <a class="d-inline-block nav-link text-dark fs-4" href="{% url 'account_logout' %}">
                                     Logout
                                 </a>
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a class="nav-link text-dark fs-4" href="{% url 'account_login' %}">
+                                <a class="d-inline-block nav-link text-dark fs-4" href="{% url 'account_login' %}">
                                     <i class="fa-solid fa-right-to-bracket fa-xs"></i> Log in
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark fs-4" href="{% url 'account_signup' %}">
+                                <a class="px-2 signup-btn d-inline-block nav-link text-dark fs-4" href="{% url 'account_signup' %}">
                                     Sign Up
                                 </a>
                             </li>
