@@ -14,8 +14,11 @@
                                  style="max-width: 300px; height: auto;" 
                                  src="{{ post.featured_image.url }}">
                         {% endif %}
-                        <h4>By: {{ post.author | safe }}<span class="post-date"> | {{ post.created_on }}</span></h4>
-                        <h6>LIKES AND COMMENTS</h6>
+                        <h5>Posted in {{ post.category }} | By: {{ post.author | safe }}<span class="post-date"> | {{ post.created_on }}</span></h5>
+                        <h5>
+                            <span><i class="fa-regular fa-comments"></i> {{ post.comments.count }}</span> |
+                            <span><i class="fa-regular fa-thumbs-up"></i> {{ post.likes.count }}</span>
+                        </h5>
                     </div>
                 </a>
             {% endfor %}
