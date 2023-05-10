@@ -2,22 +2,27 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid p-0">
     <div class="row g-0">
-        <div class="col-6 offset-3 text-center">
+        <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3 text-center">
+            <!-- List of posts  -->
             {% for post in post_list %}
-                <a href="{% url 'post_detail' post.slug  %}" class="post-detail-link d-block my-5 text-dark text-decoration-none">
-                    <div class="card">
-                        <h2 class="card-title">{{ post.title }}</h2>
+                    <div class="card mt-5 card-border">
+                        <a href="{% url 'post_detail' post.slug  %}" class="post-detail-link d-block my-5 text-dark text-decoration-none">
+                            <h6>{{ post.category.friendly_name }} | By: {{ post.author | safe }}
+                                <span class="post-date"> | {{ post.created_on }}</span>
+                            </h6>
+                            <hr class="w-75" style="margin-left: 12.5%;">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <hr class="w-75" style="margin-left: 12.5%;">
                         {% if "placeholder" not in post.featured_image.url %}
                             <img class="m-2 mx-auto d-block" 
                                  style="max-width: 300px; height: auto;" 
                                  src="{{ post.featured_image.url }}">
                         {% endif %}
                         {% if post.excerpt %}
-                            <p class="mt-2">{{ post.excerpt }}</p>
+                            <p class="mt-4 mx-2">{{ post.excerpt }}</p>
                         {% endif %}
-                        <h5>Posted in {{ post.category | safe }} | By: {{ post.author | safe }}<span class="post-date"> | {{ post.created_on }}</span></h5>
                         <h5>
                             <span><i class="fa-regular fa-comments"></i> {{ post.comments.count }}</span> |
                             <span><i class="fa-regular fa-thumbs-up"></i> {{ post.likes.count }}</span>
@@ -25,6 +30,7 @@
                     </div>
                 </a>
             {% endfor %}
+            <!-- // List of posts  -->
         </div>
     </div>
 </div>
