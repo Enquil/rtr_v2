@@ -37,7 +37,8 @@ class Post(models.Model):
                                 choices=CATEGORY_CHOICES,
                                 default='general')
     featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(max_length=300,
+                               blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(User,
