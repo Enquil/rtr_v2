@@ -4,18 +4,22 @@
 {% block content %}
 <div class="container-fluid">
     
-    <div class="row g-0">
-        <div class="col-10 offset-1 text-center">
-            {% if "placeholder" not in post.featured_image.url %}
-                <img class="m-2 mx-auto d-block detail-img" 
-                     style="max-width: 100%; height: auto;" 
+    {% if "placeholder" not in post.featured_image.url %}
+        <div class="row my-3">
+            <div class="card col-12 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
+                <img class="m-2 mx-auto d-block post-detail-img"
                      src="{{ post.featured_image.url }}">
-            {% endif %}
-            {{ post.content | safe }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row gx-0">
+        <div class="col-12 col-md-8 offset-md-2 text-center">
+            <p>{{ post.content | safe }}</p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row gx-0">
         <div class="col-md-6 offset-md-3">
             <form class="like-form" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
@@ -32,6 +36,11 @@
     {% if comments %}
         {% for comment in comments  %}
             <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h3>Comments:</h3>
+                </div>
+            </div>
+            <div class="row gx-0">
                 <div class="col-md-6 offset-md-3">
                         <p> {{ comment.body }}</p>
                     <hr>
