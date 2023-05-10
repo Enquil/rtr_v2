@@ -1,25 +1,10 @@
     /* ----- NAV / NAV-ITEMS ----- */
 
-nav {
-    background-color: #C299BE;
-}
-
-.nav-signup-btn {
-    background-color: #C5E7E2;
-}
-
 
 /* ----- FORMS ----- */
 
     /* ----- Signup-form ----- */
 
-.signup-col {
-    background-color: #372549;
-}
-
-.signup-btn {
-    background-color: #627264;
-}
 
 #signup_form > p {
     font-size: 20px;
