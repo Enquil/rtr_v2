@@ -52,11 +52,14 @@
     </head>
 
     <body class="h-100 w-100 d-flex flex-column bg-floral">
+
+        <!-- Top Nav -->
         <nav class="navbar navbar-expand-lg navbar-light bg-lilac">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}">
                     <span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span>
                 </a>
+
                 <!-- Menu button for smaller screen sizes -->
                 <button class="navbar-toggler" type="button" 
                         data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -64,6 +67,7 @@
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarText">
 
                         <!-- Categories section with dropdown menu -->
@@ -186,6 +190,9 @@
                 </div>
             </div>
         </nav>
+        <!-- /// Top Nav /// -->
+
+        <!-- Message Container -->
         <div class="container-fluid message-container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 text-center">
@@ -199,8 +206,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- Page Content -->
         {% block content %}
         {% endblock content %}
+
+        <!-- Footer -->
         <footer class="mt-auto w-100 bg-lilac">
             <div class="container-fluid">
                 <div class="row mt-1">
@@ -219,5 +230,6 @@
                 </div>
             </div>
         </footer>
+        <!-- /// Footer /// -->
     </body>
 </html>
