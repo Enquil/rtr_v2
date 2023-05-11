@@ -54,7 +54,9 @@
     <body class="h-100 d-flex flex-column bg-floral">
         <nav class="navbar navbar-expand-lg navbar-light bg-lilac">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'index' %}"><span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span></a>
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -87,7 +89,7 @@
                                 <li class="nav-item dropdown-categories">
 
                                     <a class="text-dark nav-link fs-4" 
-                                       href="{% url 'index' %}"> 
+                                       href="{% url 'index'%}"> 
                                         Art/Entertainment
                                     </a>
                                 </li>
