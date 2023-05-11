@@ -1,22 +1,29 @@
-    /* ----- NAV / NAV-ITEMS ----- */
+/* ----- NAV / NAV-ITEMS ----- */
 
 
 /* ----- FORMS ----- */
 
-    /* ----- Signup-form ----- */
+    /* ----- Signup-form, Login-form ----- */
 
-.error > li {
-    color: white;
+.wrap-signup {
+    border: 2px solid gainsboro;
 }
 
-#signup_form > p {
+#signup_form > p, .login {
     font-size: 20px;
-    color: black;
 }
 
 #signup_form > p > label {
     display: block;
 }
+
+.login > p > label {
+    display: block;
+}
+
+.wrap-login {
+        border: 2px solid gainsboro;
+    }
 
 /* ----- Post Detail ----- */
 
