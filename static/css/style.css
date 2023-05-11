@@ -48,6 +48,10 @@ textarea {
         display: block;
 }
 
+.post-form {
+    border: 2px solid gainsboro;
+}
+
     /* ----- Comment Form ----- */
 
 .comment-form > label {

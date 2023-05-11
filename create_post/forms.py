@@ -19,9 +19,16 @@ class PostForm(forms.ModelForm):
             'content': SummernoteWidget(
                        attrs={'summernote': {
                                              'width': '100%',
-                                             'height': '400px'
-                                            }}),
-            'excerpt': forms.Textarea(attrs={'cols': 60, 'rows': 4}),
+                                             'height': '400px'}}),
+            'excerpt': forms.Textarea(attrs={'cols': 55, 'rows': 6,
+                                             'class': 'mb-2'}),
+            'featured_image': forms.FileInput(
+                                    attrs={'style': 'width: 189px;',
+                                           'class': 'mb-2'}),
+            'category': forms.Select(
+                                    attrs={'style': 'width: 189px;',
+                                           'class': 'mb-2'}),
+
         }
         labels = {
             'featured_image': 'Select an image'
