@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container-fluid">
-    <form method="post" action="" class="create-post-form">
+    <form method="post" enctype="multipart/form-data" class="create-post-form">
         {% csrf_token %}
         {{ post_form }}
         <button type="submit" class="btn">Submit</button>
