@@ -4,9 +4,14 @@
 {% block content %}
 <div class="container-fluid">
     
+    <div class="row my-3 text-center">
+        <div class="col">
+            <h2>{{ post.title }}</h2>
+        </div>
+    </div>
     {% if "placeholder" not in post.featured_image.url %}
         <div class="row my-3">
-            <div class="card col-12 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
+            <div class="col-12 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
                 <img class="m-2 mx-auto d-block post-detail-img"
                      src="{{ post.featured_image.url }}">
             </div>
@@ -21,12 +26,18 @@
 
     <div class="row gx-0">
         <div class="col-md-6 offset-md-3">
-            <form class="like-form" action="{% url 'post_like' post.slug %}" method="POST">
+            <form class="like-form" 
+                  action="{% url 'post_like' post.slug %}" 
+                  method="POST">
                 {% csrf_token %}
                 {% if liked %}
-                <button type="submit" class="btn-liked"><i class="fas fa-heart fa-3x liked"></i></button>
+                <button type="submit" class="btn-liked">
+                    <i class="fas fa-heart fa-3x liked"></i>
+                </button>
                 {% else %}
-                <button type="submit" class="btn-like"><i class="far fa-heart fa-3x"></i></button>
+                <button type="submit" class="btn-like">
+                    <i class="far fa-heart fa-3x"></i>
+                </button>
                 {% endif %}
                 <span class="likes-count fs-1">{{ post.number_of_likes }}</span>
             </form>
