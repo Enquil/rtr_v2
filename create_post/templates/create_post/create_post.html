@@ -7,25 +7,25 @@
         {% csrf_token %}
         <div class="row mt-5">
             <div class="col-md-3">
-                <label class="d-block" for="id_title"><strong class="fs-5">Title:</strong></label>
+                <label class="d-block mt-1" for="id_title"><strong class="fs-5">Title:</strong></label>
                 {{ post_form.title }}
             </div>
             <div class="col-md-3">
-                <label class="d-block" for="id_category"><strong class="fs-5">Category:</strong></label>
+                <label class="d-block mt-2" for="id_category"><strong class="fs-5">Category:</strong></label>
                 {{ post_form.category }}
             </div>
             <div class="col-md-3">
-                <label class="d-block" for="id_excerpt"><strong class="fs-5">Excerpt:</strong></label>
+                <label class="d-block mt-2" for="id_excerpt"><strong class="fs-5">Excerpt:</strong></label>
                 {{ post_form.excerpt }}
             </div>
             <div class="col-md-3">
-                <label class="d-block" for="id_featured_image"><strong class="fs-5">Share an Image:</strong></label>
+                <label class="d-block mt-2" for="id_featured_image"><strong class="fs-5">Share an Image:</strong></label>
                 {{ post_form.featured_image }}
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label class="d-block" for="id_content"><strong class="fs-5">Content:</strong></label>
+                <label class="d-block mt-2" for="id_content"><strong class="fs-5">Content:</strong></label>
                 {{ post_form.content }}
             </div>
         </div>
