@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('post_filter/<str:category>/',
+    path('<str:category>/',
          views.PostFilter.as_view(),
          name="post_filter"),
 ]

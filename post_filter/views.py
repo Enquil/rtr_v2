@@ -4,7 +4,7 @@ from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse)
 
 
-class PostList(View):
+class PostFilter(View):
 
     model = Post
 
