@@ -52,15 +52,16 @@
     </div>
 
     {% if comments %}
-        {% for comment in comments  %}
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h3>Comments:</h3>
-                </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h3>Comments:</h3>
             </div>
+        </div>
+        {% for comment in comments  %}
             <div class="row gx-0">
                 <div class="col-md-6 offset-md-3">
-                        <p> {{ comment.body }}</p>
+                        <p class="mb-1 fs-5"><strong>{{ comment.name }} wrote:</strong></p>
+                        <p class="ms-3">{{ comment.body }}</p>
                     <hr>
                 </div>
             </div>
@@ -70,17 +71,21 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <hr>
-                <p>No comments has been posted</p>
+                <p class="fs-4"><strong> No comments has been posted </strong></p>
                 <hr>
             </div>
         </div>
     {% endif %}
-</div>
 
-<!-- Comment Form -->
-<form method="post" action="" class="comment-form">
-    {% csrf_token %}
-    {{ comment_form }}
-    <button type="submit" class="btn">Submit</button>
-</form>
+    <!-- Comment Form -->
+    <div class="row">
+        <div class="col">
+            <form method="post" action="" class="comment-form">
+                {% csrf_token %}
+                {{ comment_form }}
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
