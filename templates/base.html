@@ -51,14 +51,17 @@
 
     </head>
 
-    <body class="h-100 d-flex flex-column bg-floral">
+    <body class="h-100 w-100 d-flex flex-column bg-floral">
         <nav class="navbar navbar-expand-lg navbar-light bg-lilac">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}">
                     <span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Menu button for smaller screen sizes -->
+                <button class="navbar-toggler" type="button" 
+                        data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" 
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
@@ -149,7 +152,7 @@
                                 <i class="fa-solid fa-house fa-xs me-1"></i> Home
                             </a>
                         </li>
-                        <!-- Logic to handle what user sees, depending on if logged in or out -->
+                        <!-- Logic to handle what user sees, depending on if logged in or not -->
                         {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="d-inline-block nav-link text-dark fs-4" href="">
@@ -178,7 +181,7 @@
                                 </a>
                             </li>
                         {% endif %}
-                        <!-- /// Logic to handle what user sees, depending on if logged in or out /// -->
+                        <!-- /// Logic to handle what user sees, depending on if logged in or not /// -->
                     </ul>
                 </div>
             </div>
