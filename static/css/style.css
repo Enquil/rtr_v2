@@ -8,6 +8,9 @@ textarea {
 
 /* ----- NAV / NAV-ITEMS ----- */
 
+.nav-link {
+    margin-bottom: 2px;
+}
 
 /* ----- NEWSSITE / INDEX ITEMS ----- */
 
