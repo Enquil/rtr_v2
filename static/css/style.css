@@ -59,41 +59,41 @@ textarea {
 /* ----- COLOR CLASSES ----- */
 
 .bg-lilac {
-    background-color: #C299BE;
+    background-color: #C299BE !important;
 }
 
 .bg-mint {
-    background-color: #C5E7E2;
+    background-color: #C5E7E2 !important;
 }
 
 .bg-feldgrau {
-    background-color: #627264;
+    background-color: #627264 !important;
 }
 
 .bg-purple {
-    background-color: #372549;
+    background-color: #372549 !important;
 }
 
 .bg-floral {
-    background-color: #FAF7EF;
+    background-color: #FAF7EF !important;
 }
 
 .lilac {
-    color: #C299BE;
+    color: #C299BE !important;
 }
 
 .mint {
-    color: #C5E7E2;
+    color: #C5E7E2 !important;
 }
 
 .feldgrau {
-    color: #627264;
+    color: #627264 !important;
 }
 
 .purple {
-    color: #372549;
+    color: #372549 !important;
 }
 
 .floral {
-    color: #FAF7EF;
+    color: #FAF7EF !important;
 }
