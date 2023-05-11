@@ -5,15 +5,20 @@
 <div class="container-fluid">
     
     <div class="row my-3 text-center">
-        <div class="col">
+        <div class="col-12 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
             <h2>{{ post.title }}</h2>
         </div>
     </div>
     {% if "placeholder" not in post.featured_image.url %}
-        <div class="row my-3">
+        <div class="row my-3 text-center">
             <div class="col-12 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
                 <img class="m-2 mx-auto d-block post-detail-img"
                      src="{{ post.featured_image.url }}">
+
+                <h6>{{ post.category.friendly_name }} | By: {{ post.author }}
+                    <span class="post-date"> | {{ post.created_on }}</span>
+                </h6>
+                <hr>
             </div>
         </div>
     {% endif %}
@@ -39,7 +44,9 @@
                     <i class="far fa-heart fa-3x"></i>
                 </button>
                 {% endif %}
-                <span class="likes-count fs-1">{{ post.number_of_likes }}</span>
+                <span class="likes-count fs-1">
+                    {{ post.number_of_likes }}
+                </span>
             </form>
         </div>
     </div>
