@@ -79,11 +79,15 @@
 
     <!-- Comment Form -->
     <div class="row">
-        <div class="col">
+        <div class="col-md-8 offset-md-2">
             <form method="post" action="" class="comment-form">
                 {% csrf_token %}
                 {{ comment_form }}
-                <button type="submit" class="btn">Submit</button>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 d-flex flex-row-reverse">
+                        <button type="submit" class="btn bg-mint">Submit</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

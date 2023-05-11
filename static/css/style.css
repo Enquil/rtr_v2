@@ -1,3 +1,11 @@
+/* General CSS rules */
+
+textarea {
+    resize: none;
+    max-width: 100%;
+}
+
+
 /* ----- NAV / NAV-ITEMS ----- */
 
 
@@ -23,6 +31,14 @@
 
 .wrap-login {
         border: 2px solid gainsboro;
+}
+
+    /* ----- Comment Form ----- */
+
+.comment-form > label {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 
