@@ -9,13 +9,13 @@
             {% for post in post_list %}
                     <div class="card mt-5 card-border">
                         <a href="{% url 'post_detail' post.slug  %}" 
-                           class="post-detail-link d-block my-5 text-dark text-decoration-none">
+                           class="post-detail-link d-block text-dark text-decoration-none">
 
-                            <h6>{{ post.category.friendly_name }} | By: {{ post.author }}
+                            <h6 class="mt-2">{{ post.category.friendly_name }} | By: {{ post.author }}
                                 <span class="post-date"> | {{ post.created_on }}</span>
                             </h6>
                             <hr class="w-75" style="margin-left: 12.5%;">
-                            <h2 class="card-title">{{ post.title }}</h2>
+                            <h2 class="post-title">{{ post.title }}</h2>
                             <hr class="w-75" style="margin-left: 12.5%;">
                         {% if "placeholder" not in post.featured_image.url %}
                             <img class="m-2 mx-auto d-block" 

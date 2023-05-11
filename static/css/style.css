@@ -9,6 +9,12 @@ textarea {
 /* ----- NAV / NAV-ITEMS ----- */
 
 
+/* ----- NEWSSITE / INDEX ITEMS ----- */
+
+.card-border {
+    border: 2px solid gainsboro;
+}
+
 /* ----- FORMS ----- */
 
     /* ----- Signup-form, Login-form ----- */
