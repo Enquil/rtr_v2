@@ -1,10 +1,22 @@
-from django.shortcuts import render
-from django.urls import path
-from . import views
+from newssite.models import Post
+from django.views import View
+from django.shortcuts import (render, get_object_or_404,
+                              redirect, reverse)
 
-urlpatterns = [
-    path('post_filter/<str:category>/',
-         views.PostFilter.as_view(),
-         name="post_filter"),
-]
-# Create your views here.
+
+class PostList(View):
+
+    model = Post
+
+    def get(self, request, *args, **kwargs):
+
+        category_filter = self.kwargs.get('category')
+        queryset = Post.objects.filter(category=category_filter)
+
+        return render(
+            request,
+            "post_filter/post_filter.html",
+            {
+                "post_list": queryset,
+            },
+        )
