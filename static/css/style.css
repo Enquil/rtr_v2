@@ -39,6 +39,12 @@ textarea {
         border: 2px solid gainsboro;
 }
 
+    /* ----- Post Form ----- */
+
+.post-form > label {
+        display: block;
+}
+
     /* ----- Comment Form ----- */
 
 .comment-form > label {
