@@ -74,6 +74,28 @@ Some of this is more philosophical than technical, but i tried to make the funct
 
 ## Testing
 
+### Project Test
+
+![Screenshot of the rtr_v2 test](./test_images/test_rtr_v2.png)  
+
+### create_post App Test
+
+![Screenshot of the rtr_v2 test](./test_images/test_create_post.png)  
+
+### newssite App Test
+
+![Screenshot of the rtr_v2 test](./test_images/test_newssite.png)  
+
+### post_detail App Test
+
+![Screenshot of the rtr_v2 test](./test_images/test_post_detail.png)  
+
+### post_filter App Test
+
+![Screenshot of the rtr_v2 test](./test_images/test_post_filter.png)  
+
+* More testing needs to be done
+
 ***
 
 ## Deployment

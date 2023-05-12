@@ -10,6 +10,3 @@ class TestPostList(TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'newssite/index.html', 'base.html')
-
-    # def test_post_list_queryset(self):
-    #     self.assert
