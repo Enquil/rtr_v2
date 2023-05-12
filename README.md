@@ -37,17 +37,35 @@ Some of this is more philosophical than technical, but i tried to make the funct
 
 ### Planning
 
+#### Initial Identified Needs
+
 * With the pros and cons of reddit in mind, i identified the following basic needs for a user and basic solves for this:
   * Ability for any user to read posted content
   * Ability for any user to quicly navigate content relevant to them (Categories)
   * Signup and login functionality, needed to access expanded functionality
   * Ability for members to make thoughtfully crafted posts
-  * 
-### Technologies used
+  * Ability for members to like posts they find interesting/they agree with etc.
+  * Ability to comment on posts made by members, a feedback system of thought
+  * Ability for admins to moderate what posts and comments according to any would-be rules
+
+#### Models
+
+## Technologies used
+
+* Languages
+  * HTML
+  * JavaScript
+  * Css
+  * Python
+
+* Frameworks
+  * Django
 
 ## Design
 
 ## Testing
+
+## Deployment
 
 ## Bugs
 
