@@ -1,5 +1,5 @@
 from django.test import TestCase
-from newssite.models import Post, Comment
+from newssite.models import Post, Comment, Category
 from django.contrib.auth.models import User
 from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse)
@@ -12,13 +12,14 @@ class TestPostDetailView(TestCase):
 
     # Test templates when getting the PostDetail view
     def test_get_post_detail_templates(self):
+        category_model = Category.objects.create()
         user = User.objects.create(username='alan',
                                    is_superuser=True,
                                    password='enigma')
         post = Post.objects.create(title='how to crack codes',
                                    author=user,
                                    content="so easy",
-                                   category="general",
+                                   category=category_model,
                                    slug='how-to-crack-codes')
         post.likes.set(('1'))
         response = self.client.get(reverse('post_detail', args=(post.slug,)))
@@ -26,13 +27,14 @@ class TestPostDetailView(TestCase):
         self.assertTemplateUsed(response, 'post_detail/post_detail.html')
 
     def test_likes(self):
+        category_model = Category.objects.create()
         user = User.objects.create(username='alan',
                                    is_superuser=True,
                                    password='enigma')
         post = Post.objects.create(title='how to crack codes',
                                    author=user,
                                    content="so easy",
-                                   category="general",
+                                   category=category_model,
                                    slug='how-to-crack-codes')
         post.likes.set((''))
         # Add a like test
@@ -45,13 +47,14 @@ class TestPostDetailView(TestCase):
         self.assertTemplateUsed(response, 'post_detail/post_detail.html')
 
     def test_remove_likes(self):
+        category_model = Category.objects.create()
         user = User.objects.create(username='alan',
                                    is_superuser=True,
                                    password='enigma')
         post = Post.objects.create(title='how to crack codes',
                                    author=user,
                                    content="so easy",
-                                   category="general",
+                                   category=category_model,
                                    slug='how-to-crack-codes')
         post.likes.set(('1'))
         # Remove a like test

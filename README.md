@@ -58,8 +58,8 @@ With the W
 
 ### NewsCatcher News-API
 
-* This was originally implemented many months ago, problem was it only had 50 free requests and the subscription is steep for a student.  
-  Contacted NewsCatcher about adding more requests to my api-key, but did not get an answer back.  
+* This was originally implemented many months ago, sadly only had 50 free requests and the subscription-price is steep.  
+  Contacted NewsCatcher about adding more requests to my api-key, did not get an answer back.  
   Thought about keeping the code for reference,  
   but it's technically broken so finally decided on removing it altogether.  
   Will keep looking for a replacement.
