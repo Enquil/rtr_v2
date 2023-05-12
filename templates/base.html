@@ -54,14 +54,14 @@
     <body class="h-100 w-100 d-flex flex-column bg-floral">
 
         <!-- Top Nav -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-lilac">
+        <nav class="navbar navbar-expand-lg navbar-light bg-purple">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}">
-                    <span class="fs-3">R</span><h2 class="d-inline">T</h2><span class="fs-3">R</span>
+                    <span class="fs-3 text-light">R</span><h2 class="d-inline text-light">T</h2><span class="fs-3 text-light">R</span>
                 </a>
 
                 <!-- Menu button for smaller screen sizes -->
-                <button class="navbar-toggler" type="button" 
+                <button class="navbar-toggler bg-purple" type="button" 
                         data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" 
                         aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
 
                         <!-- Categories section with dropdown menu -->
                       <div class="dropdown category-menu">
-                            <li class="text-dark btn dropdown-toggle nav-color fs-4 ps-0"
+                            <li class="text-light btn dropdown-toggle nav-color fs-4 ps-0"
                                 type="button" 
                                 id="category-dropdown"
                                 data-bs-toggle="dropdown" 
@@ -82,67 +82,67 @@
                             </li>
 
                             <!-- Post Categories ul -->
-                            <ul class="dropdown-menu rounded-0 border-0 text-center m-0 bg-purple p-0 mt-2" 
+                            <ul class="dropdown-menu rounded-0 border-0 text-center m-0 bg-lilac p-0 mt-2" 
                                 aria-labelledby="category-dropdown">
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4"
+                                    <a class="text-light nav-link fs-4"
                                        href="{% url 'post_filter' '1' %}">
                                         General 
                                     </a>
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4"
+                                    <a class="text-light nav-link fs-4"
                                        href="{% url 'post_filter' '2' %}">
                                         Business 
                                     </a>
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4" 
+                                    <a class="text-light nav-link fs-4" 
                                        href="{% url 'post_filter' '3' %}"> 
                                         Art/Entertainment
                                     </a>
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
-                                    <a class="text-dark nav-link fs-4" 
+                                <li class="nav-item dropdown-categories bg-purple">
+                                    <a class="text-light nav-link fs-4" 
                                        href="{% url 'post_filter' '4' %}">
                                         Finance/Economics 
                                     </a>
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4" 
+                                    <a class="text-light nav-link fs-4" 
                                        href="{% url 'post_filter' '5' %}"> 
                                         Politics                                      
                                     </a>    
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4"
+                                    <a class="text-light nav-link fs-4"
                                        href="{% url 'post_filter' '6' %}"> 
                                         Sciences 
                                     </a>
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4" 
+                                    <a class="text-light nav-link fs-4" 
                                        href="{% url 'post_filter' '7' %}"> 
                                         Opinions 
                                     </a>
                                 </li>
 
-                                <li class="nav-item dropdown-categories bg-lilac">
+                                <li class="nav-item dropdown-categories bg-purple">
 
-                                    <a class="text-dark nav-link fs-4" 
+                                    <a class="text-light nav-link fs-4" 
                                        href="{% url 'post_filter' '8' %}"> 
                                         Ships and Giggles
                                     </a>
@@ -152,35 +152,47 @@
                         <!-- /// Categories section with dropdown menu /// -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark fs-4" aria-current="page" href="{% url 'index' %}">
+                            <a class="nav-link text-light fs-4" aria-current="page" href="{% url 'index' %}">
                                 <i class="fa-solid fa-house fa-xs me-1"></i> Home
                             </a>
                         </li>
                         <!-- Logic to handle what user sees, depending on if logged in or not -->
+                            <!-- Logged in user menu with memeber features -->
                         {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="d-inline-block nav-link text-dark fs-4" href="">
+                            <div class="dropdown category-menu">
+                                <li class="text-light btn dropdown-toggle nav-color fs-4 ps-0"
+                                    type="button" 
+                                    id="category-dropdown"
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false">
                                     <i class="fa-solid fa-user fa-xs"></i> My Account
-                                </a>
-                            </li>
+                                </li>
+
+                                <!-- Post Categories ul -->
+                                <ul class="dropdown-menu rounded-0 border-0 text-center m-0 bg-lilac p-0 mt-2" 
+                                    aria-labelledby="category-dropdown">
+
+                                    <li class="nav-item dropdown-categories bg-purple">
+
+                                        <a class="text-light nav-link fs-4"
+                                        href="{% url 'create_post' %}">
+                                        <i class="fa-solid fa-pen-to-square fa-xs"></i> Create Post 
+                                        </a>
+                                    </li>
+                            </div>
                             <li class="nav-item">
-                                <a class="nav-link text-dark fs-4" href="{% url 'create_post' %}">
-                                    <i class="fa-solid fa-pen-to-square fa-xs"></i> Create Post
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="d-inline-block nav-link text-dark fs-4" href="{% url 'account_logout' %}">
+                                <a class="d-inline-block nav-link text-light fs-4" href="{% url 'account_logout' %}">
                                     Logout
                                 </a>
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a class="d-inline-block nav-link text-dark fs-4" href="{% url 'account_login' %}">
+                                <a class="d-inline-block nav-link text-light fs-4" href="{% url 'account_login' %}">
                                     <i class="fa-solid fa-right-to-bracket fa-xs"></i> Log in
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="px-2 bg-mint rounded d-inline-block nav-link text-dark fs-4" href="{% url 'account_signup' %}">
+                                <a class="px-2 bg-mint rounded d-inline-block nav-link text-light fs-4" href="{% url 'account_signup' %}">
                                     Sign Up
                                 </a>
                             </li>
@@ -213,16 +225,16 @@
         {% endblock content %}
 
         <!-- Footer -->
-        <footer class="mt-auto w-100 bg-lilac">
+        <footer class="mt-auto w-100 bg-purple">
             <div class="container-fluid">
                 <div class="row mt-1">
                     <div class="col-6 text-center">
-                        <p class="fs-5 mb-1">
+                        <p class="fs-5 text-light mb-1">
                             &copy; Jim Olesen 2023
                         </p>
                     </div>
                     <div class="col-6 text-center">
-                        <a class="text-dark" 
+                        <a class="text-light" 
                                href="https://github.com/Enquil/" 
                                target="_blank">
                             <i class="fa-brands fa-github fa-2x"> Github</i>
