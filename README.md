@@ -4,6 +4,7 @@
 ## Table of Contents
 
 ***
+
 ## Project Description
 
 Welcome to RTR (Read, Think, React OR Rater, whatever one prefers really).  
@@ -36,8 +37,12 @@ Some of this is more philosophical than technical, but i tried to make the funct
 
 ### Planning
 
-With the W
-
+* With the pros and cons of reddit in mind, i identified the following basic needs for a user and basic solves for this:
+  * Ability for any user to read posted content
+  * Ability for any user to quicly navigate content relevant to them (Categories)
+  * Signup and login functionality, needed to access expanded functionality
+  * Ability for members to make thoughtfully crafted posts
+  * 
 ### Technologies used
 
 ## Design
