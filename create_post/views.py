@@ -3,6 +3,7 @@ from django.shortcuts import render
 from newssite.models import Post
 from django.contrib.auth.models import User
 from .forms import PostForm
+from django.contrib import messages
 from django.shortcuts import (render, get_object_or_404,
                               redirect, reverse)
 from django.http import (HttpResponse,
@@ -32,6 +33,7 @@ class CreatePost(View):
                 post_form.instance.author = request.user
                 post = post_form.save(commit=False)
                 post.save()
+                messages.success(request, f'Post was successful!')
                 return HttpResponseRedirect(
                                             reverse(
                                                     'post_detail',

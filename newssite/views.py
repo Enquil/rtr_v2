@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views import generic
 from .models import Post
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
