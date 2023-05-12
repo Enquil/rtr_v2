@@ -81,6 +81,7 @@ Some of this is more philosophical than technical, but i tried to make the funct
 ### Step-by-step deployment of live site on Heroku
 
 This will detail the general deployment steps without taking non-essential applications into account
+
 * For this deployment, you will need an account on the following pages:
   * <a href="https://id.heroku.com/login">Heroku</a>
   * <a href="https://www.elephantsql.com/">ElephantSQL</a>
