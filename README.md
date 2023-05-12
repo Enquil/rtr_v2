@@ -74,23 +74,27 @@ Some of this is more philosophical than technical, but i tried to make the funct
 
 ## Testing
 
-### Project Test
+### PEP-8
+Ran all view, model, form and url files through the <a href="https://pep8ci.herokuapp.com/">CI Python Linter</a>, no issues detected
+
+### Coverage test
+#### Project Test
 
 ![Screenshot of the rtr_v2 test](./test_images/test_rtr_v2.png)  
 
-### create_post App Test
+#### create_post App Test
 
 ![Screenshot of the rtr_v2 test](./test_images/test_create_post.png)  
 
-### newssite App Test
+#### newssite App Test
 
 ![Screenshot of the rtr_v2 test](./test_images/test_newssite.png)  
 
-### post_detail App Test
+#### post_detail App Test
 
 ![Screenshot of the rtr_v2 test](./test_images/test_post_detail.png)  
 
-### post_filter App Test
+#### post_filter App Test
 
 ![Screenshot of the rtr_v2 test](./test_images/test_post_filter.png)  
 
