@@ -46,9 +46,14 @@ Some of this is more philosophical than technical, but i tried to make the funct
   * Ability for members to make thoughtfully crafted posts
   * Ability for members to like posts they find interesting/they agree with etc.
   * Ability to comment on posts made by members, a feedback system of thought
+  * Ability to reply to comments
   * Ability for admins to moderate what posts and comments according to any would-be rules
 
-#### Models
+***
+
+## Models
+
+***
 
 ## Technologies used
 
@@ -61,19 +66,29 @@ Some of this is more philosophical than technical, but i tried to make the funct
 * Frameworks
   * Django
 
+***
+
 ## Design
+
+***
 
 ## Testing
 
+***
+
 ## Deployment
 
+***
+
 ## Bugs
+
+***
 
 ## Future Implementation
 
 ### Comment Reply System
 
-* Limited to the posts author replying to comments as of now.
+* As of now, limited to the posts author being the only one able to make a reply
 
 ### Notification system
 
