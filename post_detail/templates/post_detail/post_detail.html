@@ -28,6 +28,7 @@
             <p>{{ post.content | safe }}</p>
         </div>
     </div>
+    <hr>
 
     <div class="row gx-0">
         <div class="col-md-6 offset-md-3">
@@ -35,18 +36,22 @@
                   action="{% url 'post_like' post.slug %}" 
                   method="POST">
                 {% csrf_token %}
-                {% if liked %}
-                <button type="submit" class="btn-liked">
-                    <i class="fas fa-heart fa-3x liked"></i>
-                </button>
-                {% else %}
-                <button type="submit" class="btn-like">
-                    <i class="far fa-heart fa-3x"></i>
-                </button>
-                {% endif %}
-                <span class="likes-count fs-1">
-                    {{ post.number_of_likes }}
-                </span>
+                <div class="row text-center">
+                    <div class="col">
+                        {% if liked %}
+                            <button type="submit" class="btn-liked border-0">
+                                <i class="fa-solid fa-thumbs-up fa-2x"></i>
+                            </button>
+                        {% else %}
+                            <button type="submit" class="btn-like border-0">
+                                <i class="far fa-thumbs-up fa-2x"></i>
+                            </button>
+                        {% endif %}
+                        <span class="likes-count fs-1">
+                            {{ post.number_of_likes }}
+                        </span>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -59,7 +64,7 @@
         </div>
         {% for comment in comments  %}
             <div class="row gx-0">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
                         <p class="mb-1 fs-5"><strong>{{ comment.name }} wrote:</strong></p>
                         <p class="ms-3">{{ comment.body }}</p>
                     <hr>
@@ -79,12 +84,12 @@
 
     <!-- Comment Form -->
     <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <form method="post" action="" class="comment-form">
+        <div class="col-md-8 offset-md-2 text-center">
+            <form method="post" action="" class="comment-form mb-2">
                 {% csrf_token %}
                 {{ comment_form }}
                 <div class="row">
-                    <div class="col-md-8 offset-md-2 d-flex flex-row-reverse">
+                    <div class="col-md-8 offset-md-2 text-center">
                         <button type="submit" class="btn bg-mint">Submit</button>
                     </div>
                 </div>
